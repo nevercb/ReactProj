@@ -1,4 +1,4 @@
-#技术选型
+# 技术选型
 
 * React工具
     * ionicon
@@ -64,4 +64,66 @@ date:  input框
 * 创建工程
     * creat-react-app创建模板
     
+## 规范
+* 组件分类
+    * 展示型组件
+        * 仅通过prop接受数据
+    * 容器型组件
+        * 更关注数据
+        * 为前者提供数据和回调函数
+    * 呈现目录
+```
+myapp
+    -public
+    -node_modules
+    -src
+        -components
+            -ComponentName.js
+            -__test__
+                -ComponentName.test.js
+        -containers
+            -ComponentName.js
+            -__test__
+                -ComponentName.test.js
+        App.js
+        App.css
+        index.js
+        index.css
+        logo.svg
+        ...    
+```        
+* 命名规范
+    * 自定义组件每个单词首字母都大写
 
+## 拆分首页组件
+* 拆分首页的展示型组件
+    * 拆分组件:
+        * monthSelect
+        * totalNumber
+        * viewTab
+        * CreateButton
+        * priceList(priceItem)
+    
+* 分析组件
+    * priceList
+        * 分析组件属性
+            * items(需要渲染的信息)
+            * onDeleteItem(删除时执行的回调)
+            * onEditItem(编辑时执行的回调)
+
+        * 暂定传入的数据结构
+```
+[
+    {
+        "id": 1,
+        "title": "去苏州旅游",
+        "price": 200,
+        "date": "2023-7-8",
+        "category":{
+            "id": 1,
+            "name": "旅游",
+            "type": "outcome",
+        }
+    }
+]
+```
