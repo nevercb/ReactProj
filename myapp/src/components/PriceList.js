@@ -1,4 +1,5 @@
 import React from 'react';
+import { MdCardTravel } from "react-icons/md";
 
 const PriceList = ({items, onEditItem, onDeleteItem}) => {
     return (
@@ -9,7 +10,10 @@ const PriceList = ({items, onEditItem, onDeleteItem}) => {
                     justify-content-between align-items-center"
                     key={item.id}
                     > 
-                        <span className="col-1 badge text-bg-success">{item.category.name}</span>
+                        <span className="col-1 badge text-bg-success">
+                        <MdCardTravel fontSize={"20px"}/>
+                        </span>
+                        
                         <span className="col-5 fw-semibold">{item.title}</span>
                         <span className="col-2 fw-bolder" >
                             {(item.category.type === "cost" ? "-":"+")}

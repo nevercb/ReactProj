@@ -119,6 +119,7 @@ myapp
         "title": "去苏州旅游",
         "price": 200,
         "date": "2023-7-8",
+        "
         "category":{
             "id": 1,
             "name": "旅游",
@@ -127,3 +128,16 @@ myapp
     }
 ]
 ```
+
+## 图标库
+* free:
+    * iconmoon
+    * ionicons
+* 使用
+    * npm install react-ionicons@2.1.6 --save
+    * 这里我们使用的是react-icons
+    * npm install @react-icons/all-files
+## 类型检查
+* React内置：
+    * PropTypes
+* TypeScript(此处不用)
