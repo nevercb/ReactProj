@@ -5,7 +5,8 @@ class MonthPicker extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            isOpen: false
+            isOpen: false,
+            selectedYear: this.props.year
         }
     }
     toggleDropDown = (event) => {
@@ -14,9 +15,26 @@ class MonthPicker extends React.Component {
             isOpen: !this.state.isOpen
         })
     }
+    changeYear = (event, numyear)=>{
+        event.preventDefault()
+        this.setState({
+            selectedYear: numyear
+        })
+    }
+    ifYearOrMonthSame = (src, cur) => {
+        return src === cur ? "dropdown-item active" : "dropdown-item"
+    }    
+    selectAndCloseBtn(e, month){
+        e.preventDefault()
+        this.props.onChange(this.state.selectedYear, month)
+        this.setState({
+            isOpen: false
+        })
+    }
     render(){
-        const {year, month} = this.props
+        const {year, month, onChange} = this.props
         const {isOpen} = this.state
+        const {selectedYear} = this.state
         const yearRange = range(9, -4 + year)
         const monthRange = range(12, 1) 
         return (
@@ -35,7 +53,9 @@ class MonthPicker extends React.Component {
                             <div className="col">
                                 {
                                     yearRange.map((yearNumber, index) => 
-                                        <a key={index} className="dropdown-item">
+                                        <a key={index} className= {this.ifYearOrMonthSame(yearNumber, selectedYear)}
+                                            onClick={(event) => {this.changeYear(event, yearNumber)}}
+                                        >
                                             {yearNumber} 年
                                         </a>
                                     )
@@ -44,7 +64,10 @@ class MonthPicker extends React.Component {
 
                             <div className="col"> {
                                         monthRange.map((monthNumber, index) =>  
-                                                <a key={index} className="dropdown-item">
+                                                <a key={index} 
+                                                    className={this.ifYearOrMonthSame(monthNumber, month)}
+                                                    onClick={(e) => this.selectAndCloseBtn(e, monthNumber)}    
+                                                >
                                                     {monthNumber} 月
                                                 </a>   
                                         )

@@ -33,7 +33,7 @@ function App() {
   const outcome = 200;
   return (
     <div className="App">
-      <MonthPicker year={200} month={200}/>
+      <MonthPicker year={200} month={2} onChange={(year, month) => console.log(year, month)}/>
       <TotalCost income={income} outcome={outcome} />
       <ViewTab activeTab={CHART_VIEW} onTabChange={(activeTab)=>console.log(activeTab)}/>
       <PriceList items={items} 
