@@ -1,4 +1,5 @@
-# 技术选型
+# 记账Web App
+## 技术选型
 
 * React工具
     * ionicon
@@ -11,7 +12,7 @@
     * JSONServer
     * Axios
 
-# From UI to FrontEnd
+## From UI to FrontEnd
 
 * 分析原型图
     * 总体结构
@@ -126,7 +127,7 @@ myapp
 ]
 ```
 
-## 图标库
+### 图标库
 * free:
     * iconmoon
     * ionicons
@@ -134,7 +135,7 @@ myapp
     * npm install react-ionicons@2.1.6 --save
     * 这里我们使用的是react-icons
     * npm install @react-icons/all-files
-## 类型检查
+### 类型检查
 * React内置：
     * PropTypes(包括DefaultProps)
 * TypeScript(此处不用)
@@ -190,3 +191,6 @@ year3   | month3
 ```
 * 样式库 
     * Bootstrap
+
+* 截至目前主页静态的子组件完成后的效果图
+![Alt text](image.png)
