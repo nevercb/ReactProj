@@ -151,3 +151,42 @@ myapp
     * 利用activeTab实现添加对应className使高度
     * 添加图标react-icons
     * 去除链接的click默认行为
+
+
+### TotalCost组件
+* 分析组件属性
+    * income
+    * outcome
+    * 收入支出可以父组件计算完成
+
+### MonthPicker组件
+* 需求分析
+    * 按钮显示传入年月,点击按钮可以展开和关闭菜单
+    * 显示当前年前后4年和月份(1-12)
+    * 传入年月,打开菜单后对应年月应该高亮
+    * 点击不同年可以切换,点击月份callback
+* 组件属性
+    * year
+    * month
+    * onChange
+* 分段开发
+    * 创建按钮,显示对应年月
+    * 创建下拉菜单,点击按钮可以显示,或者隐藏
+    * 下拉菜单中显示两列,分别位年月信息
+    * 给对应年月高亮
+    * 添加点击年份和月份后的交互
+* 原型图
+```
+selectMonth
+-----------
+year:month:
+-----------
+[menu]
+year1   | month1
+year2   | month2
+year3   | month3
+....   ,,,,
+------------
+```
+* 样式库 
+    * Bootstrap

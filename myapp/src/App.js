@@ -5,6 +5,7 @@ import PriceList from './components/PriceList.js'
 import ViewTab from './components/ViewTab.js'
 import TotalCost from './components/TotalCost.js';
 import {LIST_VIEW, CHART_VIEW} from './utility.js'
+import MonthPicker from './components/MonthPicker.js';
 
 function App() {
   const items = [{
@@ -32,6 +33,7 @@ function App() {
   const outcome = 200;
   return (
     <div className="App">
+      <MonthPicker year={200} month={200}/>
       <TotalCost income={income} outcome={outcome} />
       <ViewTab activeTab={CHART_VIEW} onTabChange={(activeTab)=>console.log(activeTab)}/>
       <PriceList items={items} 
