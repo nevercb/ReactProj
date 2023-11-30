@@ -139,5 +139,5 @@ myapp
     * npm install @react-icons/all-files
 ## 类型检查
 * React内置：
-    * PropTypes
+    * PropTypes(包括DefaultProps)
 * TypeScript(此处不用)

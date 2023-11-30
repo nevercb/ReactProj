@@ -1,6 +1,8 @@
 import React from 'react';
 import { MdCardTravel } from "react-icons/md";
-
+import { FaEdit } from "react-icons/fa";
+import { MdDeleteForever } from "react-icons/md";
+import PropTypes from 'prop-types'
 const PriceList = ({items, onEditItem, onDeleteItem}) => {
     return (
         <ul className="list-group-flush list-group">
@@ -19,13 +21,26 @@ const PriceList = ({items, onEditItem, onDeleteItem}) => {
                             {(item.category.type === "cost" ? "-":"+")}
                             ¥{item.cost}</span>
                         <span className="col-2">{item.date}</span>
-                        <button className="col-1 btn btn-outline-success">edit</button>
-                        <button className="col-1 btn btn-outline-danger">delete</button>
+                        <a className="col-1" onClick={()=>{onEditItem(item)}}>
+                            <FaEdit fontSize={"20px"}/>
+                        </a>
+                        <a className="col-1" onClick={()=>{onDeleteItem(item)}}>
+                            <MdDeleteForever fontSize={"20px"} color="red"/>
+                        </a>
                     </li>
                 ))
             }
         </ul>
     );
 };
+PriceList.propTypes = {
+    items: PropTypes.array.isRequired,
+    onDeleteItem: PropTypes.func.isRequired,
+    onEditItem: PropTypes.func.isRequired
+}
+
+// PriceList.defaultProps={
+//     onDeleteItem: () => {}
+// }
 
 export default PriceList;

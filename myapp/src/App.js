@@ -27,7 +27,8 @@ function App() {
   }]
   return (
     <div className="App">
-      <PriceList items={items}
+      <PriceList items={items} onEditItem={(item)=> console.log(item.id)}
+      onDeleteItem={(item)=> console.log(item.id)}
       />
     </div>
   );
