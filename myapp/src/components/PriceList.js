@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import { MdCardTravel } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
 import { MdDeleteForever } from "react-icons/md";
-import PropTypes from 'prop-types'
+
 const PriceList = ({items, onEditItem, onDeleteItem}) => {
     return (
         <ul className="list-group-flush list-group">

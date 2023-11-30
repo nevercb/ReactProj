@@ -103,15 +103,12 @@ myapp
         * viewTab
         * CreateButton
         * priceList(priceItem)
-    
-* 分析组件
-    * priceList
-        * 分析组件属性
-            * items(需要渲染的信息)
-            * onDeleteItem(删除时执行的回调)
-            * onEditItem(编辑时执行的回调)
-
-        * 暂定传入的数据结构
+### PriceList组件  
+* 分析组件属性
+    * items(需要渲染的信息)
+    * onDeleteItem(删除时执行的回调)
+    * onEditItem(编辑时执行的回调
+* 暂定传入的数据结构
 ```
 [
     {
@@ -141,3 +138,16 @@ myapp
 * React内置：
     * PropTypes(包括DefaultProps)
 * TypeScript(此处不用)
+
+### ViewTab组件
+* 分析组件属性
+    * activeTab: 用来指示当前哪个Tab高亮
+    * onTabChange: 点击Tab时的回调
+* 样式库
+    * bootstrap: tab
+* utility.js
+    * 定义一些常量和常用函数
+* 实现功能
+    * 利用activeTab实现添加对应className使高度
+    * 添加图标react-icons
+    * 去除链接的click默认行为
