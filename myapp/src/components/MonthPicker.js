@@ -39,9 +39,9 @@ class MonthPicker extends React.Component {
         const monthRange = range(12, 1) 
         return (
             <div className="dropdown">
-                <h4>Select Month</h4>
+                <h6>Select Month</h6>
                 <button 
-                    className="btn btn-lg btn-secondary dropdown-toggle"
+                    className="btn btn-sm btn-secondary dropdown-toggle"
                     onClick={this.toggleDropDown}
                 >
                   {year}年 {month}月
