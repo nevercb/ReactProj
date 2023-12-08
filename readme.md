@@ -194,3 +194,21 @@ year3   | month3
 
 * 截至目前主页静态的子组件完成后的效果图
 ![Alt text](image.png)
+
+### CreateButton组件
+* 简单的一个button
+
+### Home
+* Home组件是一个container组件，放在container目录下
+* 原先直接在App.js调试，现在展示性组件全放在Home组件下展示
+* 集合了子组件
+* 稍微调整布局
+### State设计
+
+* 最小化state
+* Home页state
+    * 主要包括items, currentDate, tabView
+* Home页单向数据流
+    * setState改变的是容器性组件中的state
+    * 展示性组件调用的是容器型组件传入的方法，本质上是容器型组件在处理事件
+    * 需要传递给子组件的方法有：onchangeView, onchangeDate, oncreateItem, onModifyItem, onDeleteItem, 方法定义在容器组件中定义，起到编写处理数据逻辑的作用。
